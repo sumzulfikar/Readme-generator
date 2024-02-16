@@ -1,0 +1,27 @@
+{
+  "name": "readme-generator",
+  "version": "1.0.0",
+  "description": "This is to enable users to generate readme file based on a series of questions prompted",
+  "main": "index.js",
+  "scripts": {
+    "test": "Test that a file it generated and acceptance criteria are met"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sumzulfikar/Readme-generator.git"
+  },
+  "keywords": [
+    "easy",
+    "readme",
+    "user-friendly"
+  ],
+  "author": "Sumaiya Zulfikar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sumzulfikar/Readme-generator/issues"
+  },
+  "homepage": "https://github.com/sumzulfikar/Readme-generator#readme",
+  "dependencies": {
+    "inquirer": "^6.5.0"
+  }
+}

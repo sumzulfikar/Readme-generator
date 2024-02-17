@@ -1,6 +1,8 @@
 // function to generate markdown for README
 function generateMarkdown(answers) {
   const readmeContent=`
+  ![Static Badge](https://img.shields.io/badge/${answers.License}-yellow)
+
   # Project Title: ${answers.title}
   ## Description
      ${answers.Description}

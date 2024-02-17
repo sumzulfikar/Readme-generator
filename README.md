@@ -1,5 +1,7 @@
 
 ![Static Badge](https://img.shields.io/badge/NPM-6.5.0-blue)
+=========
+https://img.shields.io/badge/with%20a%20logo-grey?style=for-the-badge&logo=javascript
 
 
 # Readme-generator

@@ -46,7 +46,7 @@ const questions = [
     {
         type: "input",
         name: "Contributing",
-        message:"Enter how other can contribute to your project:"
+        message:"Describe how others could contribute to this project:"
     
         },
     {
@@ -55,23 +55,72 @@ const questions = [
         message:"Enter how to test the project:"
         
     },
-
+    {
+        type: "input",
+        name: "Email",
+        message:"Enter your email address:"
+        
+    },
+    {
+        type: "input",
+        name: "githubUser",
+        message:"Enter your github user name"
+        
+    },
+    {
+        type: "input",
+        name: "githublink",
+        message:"Enter your github link"
+        
+    },
+    {
+        type: "input",
+        name: "contact",
+        message:"Enter how you can be contacted"
+        
+    },
 
 
 ]
 
-    
-  
+ 
 
   inquirer.prompt(questions).then((answers) => {
     console.log('\nOrder receipt:');
     console.log(JSON.stringify(answers, null, '  '));
 console.log(answers.title);
-    //Creates a Read me file for the user based on asnwer
-    // const readmeContent=`
-    // ##${questions.name[0]}`
+    //Creates a Read me file for the user based on answer
+ const readmeContent=`
+ # Project Title: ${answers.title}
+ ## Description
+    ${answers.Description}
+ ## Table of Contents
+ - [Installation](#installation)
+ - [Usage](#usage)
+ - [License](#license)
+ - [Contributing](#contributing)
+ - [Tests](#tests)
+ - [Questions](#Questions)
 
-    fs.writeFile("Read_Me.md", 'Your Read me is', function (err) {
+## Installation
+${answers.Installation}
+
+## Usage
+${answers.Usage}
+
+## License
+${answers.License}
+
+## Contributing
+${answers.Contributing}
+
+## Questions
+${answers.contact}
+[${answers.githubUser}](${answers.githublink})
+${answers.Email}
+    `
+
+    fs.writeFile("Sample_Read_Me.md", readmeContent, function (err) {
         if (err) throw err;
         console.log('Saved!');
       });

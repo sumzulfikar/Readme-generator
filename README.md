@@ -16,7 +16,8 @@ This is a command line generated Readme generator where users are prompted with 
 This is the link for a [video walkthrough](https://www.youtube.com/watch?v=iH-1SwjbSzk)
 
 ### Sample Readme
-Here is a link to a sample Readme generated during testing. [Sample Readme file](https://github.com/sumzulfikar/Readme-generator/blob/main/utils/Sample_Read_Me.md)
+Here is a link to a sample Readme generated using the commandline in this application.
+[Sample Readme file](https://github.com/sumzulfikar/Readme-generator/blob/main/utils/Sample_Read_Me.md)
 
 ## Technology
 Using https://www.npmjs.com/package/inquirer

@@ -1,16 +1,15 @@
-const inquirer = require('inquirer');
-const fs = require('fs');
+const inquirer = require("inquirer");
+const fs = require("fs");
+const generateMarkdown = require("./utils/generateMarkdown");
 
-
-
-
+// When user start the commandline a welcome message to user
 console.log(`Hi! Tell us more about your project and 
 build an automatic readme.
-You will be promted with a series
-of questions. 
-Just answer the questions
-and beautiful readme file will be generated. Isn't that easy!`);
+You will be promted with a series of questions. 
+Just answer the questions and beautiful readme file will be generated. 
+Isn't that easy!`);
 
+// The series of questions asked to the user
 const questions = [
     {
     type: "input",
@@ -79,49 +78,19 @@ const questions = [
         message:"Enter how you can be contacted"
         
     },
-
-
 ]
-
  
 
-  inquirer.prompt(questions).then((answers) => {
+inquirer.prompt(questions).then((answers) => {
     console.log('\nOrder receipt:');
     console.log(JSON.stringify(answers, null, '  '));
 console.log(answers.title);
-    //Creates a Read me file for the user based on answer
- const readmeContent=`
- # Project Title: ${answers.title}
- ## Description
-    ${answers.Description}
- ## Table of Contents
- - [Installation](#installation)
- - [Usage](#usage)
- - [License](#license)
- - [Contributing](#contributing)
- - [Tests](#tests)
- - [Questions](#Questions)
-
-## Installation
-${answers.Installation}
-
-## Usage
-${answers.Usage}
-
-## License
-${answers.License}
-
-## Contributing
-${answers.Contributing}
-
-## Questions
-${answers.contact}
-[${answers.githubUser}](${answers.githublink})
-${answers.Email}
-    `
+    
+//Creates a Read me file for the user based on answer
+    const readmeContent=generateMarkdown(answers);
 
     fs.writeFile("Sample_Read_Me.md", readmeContent, function (err) {
         if (err) throw err;
-        console.log('Saved!');
+        console.log('Your readme is generated!');
       });
   });
